@@ -1,6 +1,6 @@
 import Home from "../componentes/Home/Home.js";
 import Sandwiches from "../componentes/Sandwich.js";
-import Bus from "../componentes/Bus.js";
+import Restaurantes from "../componentes/Home/Restaurantes.js";
 import Cart from "../componentes/Cart.js";
 import NoMatch from "../componentes/NoMatch.js"
 const routes = [
@@ -14,8 +14,8 @@ const routes = [
     component: Home,
     routes: [
       {
-        path: "/home/bus",
-        component: Bus
+        path: "/home/restaurantes",
+        component: Restaurantes
       },  
       {
         path: "/home/cart",

@@ -1,66 +1,140 @@
-import styled from 'styled-components';
-import {Link} from 'react-router-dom'
-
-export const NavHeader=styled.header`
-height:144px;
-box-shadow: 0px 1px 8px -3px grey;
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+import Carousel from "react-bootstrap/Carousel";
+export const NavHeader = styled.header`
+  height: 144px;
+  z-index: 5;
+  position: relative; /* box-shadow: 0px 1px 8px -3px grey; */
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
 `;
-export const Nav =styled.nav`
-flex-grow:1;`;
-
+export const Nav = styled.nav`
+  flex-grow: 1;
+`;
 
 export const UserIcon = styled.div`
-width:45px;
-height:45px;
-border-radius:50%;
-overflow:hidden;
-cursor:pointer;
->img{
-    width:50px;
-    height:50px;
-} 
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  overflow: hidden;
+  cursor: pointer;
+  > img {
+    width: 50px;
+    height: 50px;
+  }
 `;
-export const Icon =styled.i`
-font-size:1.5em;
-color:tomato;
-cursor:pointer;
+export const Icon = styled.i`
+  font-size: 1.5em;
+  color: tomato;
+  cursor: pointer;
+`;
+export const HomeContainer = styled.section`
+  background-color: #FAFDFF;
+`;
+export const NavAside = styled.aside`
+  border-right: 3px solid tomato;
+`;
+export const NavItem = styled(Link)`
+  padding: 20px;
+  width: 100%;
+  color: black;
+  > span {
+    padding-left: 10px;
+  }
+  &:hover {
+    border-left: 5px solid tomato;
+    text-decoration: none;
+    color: black;
+  }
+  &:focus {
+    border-left: 5px solid tomato;
+  }
+`;
+export const UserNavMenu = styled.div`
+  background-color: tomato;
+  top: 47px;
+  width: 90px;
+  z-index: 10;
+
+  > ul {
+    list-style: none;
+    padding-left: 0px;
+    text-align: center;
+    margin-bottom: 0;
+  }
+  > ul > li {
+    color: white;
+    padding: 5px 0px 5px 0px;
+  }
 `;
 
-export const NavAside=styled.aside`
-border-right:3px solid tomato;
-
+export const ContentTitle = styled.div`
+  border-bottom: 0.1px solid #505050;
 `;
-export const NavItem=styled(Link)`
-padding:30px 20px 20px 30px;
-width:100%;
-color:black;
->span{
-    padding-left:10px;
-}
-&:hover{
-    border-left:5px solid tomato;
-    text-decoration:none;
-    color:black;
-}
-&:focus{
-    border-left:5px solid tomato;
-}
+
+export const BCarousel = styled(Carousel)`
+  height: 540px;
+  border-radius: 5px;
+  > div {
+    height: 540px;
+    border-radius: 20px;
+  }
+  > ol.carousel-indicators > li {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: transparent;
+    border: 1px solid white;
+    opacity: 1;
+    &:hover {
+      background: white !important;
+    }
+    &:active {
+      background: white;
+    }
+  }
+  > ol.carousel-indicators > li.active {
+    background: white;
+  }
 `;
-export const UserNavMenu=styled.div`
-background-color:tomato;
-top:47px;
-width:90px;
-z-index:10;
+/*Compontente Restaurant*/
+export const HCarousels = styled.div`
+  height: 142px;
+  position: relative;
 
->ul{
-    list-style:none;
-    padding-left:0px;
-    text-align:center;
-    margin-bottom:0;
-}
->ul>li{
-   color:white;
-   padding:5px 0px 5px 0px;
-}
+  > div.alice-carousel,
+  > div.alice-carousel > div,
+  > div.alice-carousel > div > div.alice-carousel__wrapper,
+  > div.alice-carousel > div > div.alice-carousel__wrapper > ol > li{
+    height: 142px;
+  }
+ 
+`;
 
+export const HCarouselButtons = styled.button`
+  position: absolute;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.16);
+  width: 80px;
+  top: 0px;
+  height: 142px;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  font-size:2rem;
+  &:focus{
+  box-shadow:initial;
+  }
+`;
+export const HCarouselButtonsPrev = styled(HCarouselButtons)`
+  /* right: 0px; */
+  left: 0px;
+  text-align: left;
+`;
+export const HCarouselButtonsNext = styled(HCarouselButtons)`
+  
+  right: 0px;
+  text-align: right;
+`;
+export const HCarouselIcon = styled(Icon)`
+  color: black;
 `;
