@@ -100,7 +100,7 @@ export const BCarousel = styled(Carousel)`
 export const HCarousels = styled.div`
   height: 142px;
   position: relative;
-
+  
   > div.alice-carousel,
   > div.alice-carousel > div,
   > div.alice-carousel > div > div.alice-carousel__wrapper,
@@ -122,7 +122,7 @@ export const HCarouselButtons = styled.button`
   justify-content:center;
   font-size:2rem;
   &:focus{
-  box-shadow:initial;
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.16);
   }
 `;
 export const HCarouselButtonsPrev = styled(HCarouselButtons)`
@@ -138,3 +138,32 @@ export const HCarouselButtonsNext = styled(HCarouselButtons)`
 export const HCarouselIcon = styled(Icon)`
   color: black;
 `;
+
+/*Resultados de restaurants*/
+export const Rheader=styled.header`
+height:60px;
+ >*>.col-md-3{
+   border:1px solid #FFA528;
+   border-radius:10px;
+ }
+ >*>.col-md-3>img{
+   width:50px;
+   height:50px;
+   border-radius:50%;
+ }
+ >.row,>.row>div{
+   height:60px;
+ }
+ >*>.col-md-3>span{
+   font-size:1.1rem;
+   color:#49D295;
+   line-height:24px;
+ }
+`;
+export const Spacer=styled.div`
+height:15px;
+background-color:#F7F7F7;
+border:1px solid #E5EDEF;
+`;
+
+/*Card contents*/

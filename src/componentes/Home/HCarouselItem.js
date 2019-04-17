@@ -1,10 +1,23 @@
-import React from 'react'
-import logo from "../../assets/img/logo.jpg";
+import React, { Component } from 'react';
+import ActiveItem from './HCarousel/ActiveItem';
+import NormalItem from './HCarousel/NormalItem';
 
-export default function HCarouselItem(props) {
-  return (
-    <div className="carouselaitem d-flex align-items-center ml-4">
-        <div><img src={logo}/></div>
-    </div>
-  )
+export default class HCarouselItem extends Component {
+  state={
+    activeItem:false
+  }
+  handleClickedItem=()=>{
+    console.log("clicked");
+  }
+  
+ 
+  render() {
+    if(this.state.activeItem){
+      return <ActiveItem onClick={this.handleClickedItem}/>
+    }
+    else{
+      return <NormalItem onClick={this.handleClickedItem}/>
+    }
+   
+  }
 }

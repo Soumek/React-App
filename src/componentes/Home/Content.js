@@ -25,7 +25,7 @@ const promiseOptions = inputValue =>
     const {routes}=this.props;
     return (
       <section className="col-md-9 mt-4 container">
-        <ContentTitle className="d-flex justify-content-start ml-3">
+        <ContentTitle className="d-flex justify-content-start">
           <h2>Ordena lo más destacado de la semana</h2>
         </ContentTitle>
         <Carousels/>
