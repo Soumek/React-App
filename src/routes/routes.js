@@ -1,7 +1,10 @@
 import Home from "../componentes/Home/Home.js";
 import Sandwiches from "../componentes/Sandwich.js";
-import Restaurantes from "../componentes/Home/Restaurantes.js";
+import Restaurantes from "../componentes/Home/Content/Restaurants/Restaurantes.js";
+import RestaurantView from "../componentes/Home/Content/Restaurants/Restaurant/RestaurantView.js"
 import Cart from "../componentes/Cart.js";
+import Login from "../componentes/Login/Login.js"
+import Register from "../componentes/Register/Register.js"
 import NoMatch from "../componentes/NoMatch.js"
 const routes = [
   
@@ -13,20 +16,39 @@ const routes = [
     path: "/home",
     component: Home,
     routes: [
-      {
-        path: "/home/restaurantes",
-        component: Restaurantes
-      },  
+      
       {
         path: "/home/cart",
         component: Cart
+      },
+      {
+        path: "/home",
+        component: Restaurantes,
+        routes:[
+          {
+            path:"/home/restaurantes/:id",
+            component:RestaurantView
+          }
+        ]
       }
+
     ]
-  },
+  }
+  ,
+  {
+    path:"/registrar",
+    component:Register
+   },
   {
     path:"/:wtf",
     component:NoMatch
+  },
+  
+  {
+    path:"/",
+    component:Login
   }
+ 
   
 ];
 

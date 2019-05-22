@@ -35,7 +35,7 @@ export default class StatusBar extends Component {
         <div className="col-md-4 d-flex justify-content-center position-relative">
          
           <UserIcon onClick={this.handleUserMenu}>
-            <img src={user} />
+            <img src={user} alt='' />
           </UserIcon>
           <CSSTransition
       timeout={300}

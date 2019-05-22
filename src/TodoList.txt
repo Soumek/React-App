@@ -1,0 +1,4 @@
+Existen algunos errores en la produccion, los cuales derivian de tanto
+como esta configurado react-router-dom y tambien como esta configurado el aside
+ya que este no se muestra pero sin embargo usermenu de statusbar se muestra con total tranquilidad
+a pesar de tener casi las mismas caracteristicas.

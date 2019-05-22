@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Carousel from "react-bootstrap/Carousel";
 export const NavHeader = styled.header`
   height: 144px;
@@ -30,10 +30,14 @@ export const Icon = styled.i`
 export const HomeContainer = styled.section`
   background-color: #FAFDFF;
 `;
+export const ContentWrapper=styled.section`
+
+`;
 export const NavAside = styled.aside`
   border-right: 3px solid tomato;
+
 `;
-export const NavItem = styled(Link)`
+export const NavItem = styled(NavLink)`
   padding: 20px;
   width: 100%;
   color: black;
@@ -45,7 +49,8 @@ export const NavItem = styled(Link)`
     text-decoration: none;
     color: black;
   }
-  &:focus {
+ 
+  &.active{
     border-left: 5px solid tomato;
   }
 `;

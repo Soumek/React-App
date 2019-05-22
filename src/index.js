@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+
 import App from './App';
-import NestedRoutes from './NestedRoutes'
+// import NestedRoutes from './Pruebas/NestedRoutes'
+// import Application from './Pruebas/Application'
 
 import * as serviceWorker from './serviceWorker';
 

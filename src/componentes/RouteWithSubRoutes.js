@@ -21,10 +21,9 @@ llamandolo asi ocmo this.props.routes, para declarar nuevas rutas internas. */
 export default class RouteWithSubRoutes extends Component {
   render() {  
     const route =this.props
-    const results=this.props.results
     return (
      <Route
-
+      exact={route.exact}
       path={route.path}
       render={props => (
         // pass the sub-routes down to keep nesting
