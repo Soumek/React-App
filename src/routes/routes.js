@@ -3,7 +3,7 @@ import Sandwiches from "../componentes/Sandwich.js";
 import Restaurantes from "../componentes/Home/Content/Restaurants/Restaurantes.js";
 import RestaurantView from "../componentes/Home/Content/Restaurants/Restaurant/RestaurantView.js"
 import Cart from "../componentes/Cart.js";
-import Login from "../componentes/Login/Login.js"
+import Login from "../componentes/Auth/Login.js"
 import Register from "../componentes/Register/Register.js"
 import NoMatch from "../componentes/NoMatch.js"
 const routes = [
