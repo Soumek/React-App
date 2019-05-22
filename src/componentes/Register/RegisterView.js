@@ -5,6 +5,7 @@ export default class Register extends Component {
     return (
       <div>
         Registro
+        <button onClick={this.props.onFormChange} className="btn btn-primary">¿No tienes una cuenta? ¡Regístrate aquí!</button>
       </div>
     )
   }

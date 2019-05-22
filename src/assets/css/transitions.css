@@ -51,6 +51,35 @@
 }
 
 
+.login-enter {
+
+  transform: translateX(40vw);
+  
+}
+.login-enter-active {
+
+  transition: all 500ms cubic-bezier(0.25,0.1,0.25,1);
+  
+}
+.login-enter-done{
+  transform: translateX(0vw);
+  transition: all 500ms cubic-bezier(0.25,0.1,0.25,1);
+}
+
+.login-exit {
+  
+  transform: translateX(30vw);
+  transition: all 500ms cubic-bezier(0.25,0.1,0.25,1);
+}
+.login-exit-active {
+transition: all 500ms cubic-bezier(0.25,0.1,0.25,1);
+  
+}
+.login-exit-done{
+  transform: translateX(30vw);
+  transition: all 500ms cubic-bezier(0.25,0.1,0.25,1);
+}
+
 
 
 .carouselitem{

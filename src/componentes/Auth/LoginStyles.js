@@ -5,6 +5,7 @@ import LockIcon from '@material-ui/icons/Lock';
 
 export const CardWrapper = styled.div`
   height:100vh;
+  overflow:hidden;
   > div.card{
     width:100%;
     height: 540px;
@@ -20,15 +21,18 @@ export const CardRow = styled.div`
     height:100%;
   }
 `;
-export const CardCol = styled.div`
-  height: 100%;
+export const CardCol = styled(CardRow)`
+
 `;
 export const CardImgL = styled.img`
   height:100%;
 `;
-export const CardImgRWrapper=styled.div`
+export const LogoWrapper=styled.div`
 width:100%;
 height:50%;
+>h2{
+  font-size:3rem;
+}
 `;
 export const CardImgR = styled.img`
 width:70%;

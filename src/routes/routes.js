@@ -4,7 +4,6 @@ import Restaurantes from "../componentes/Home/Content/Restaurants/Restaurantes.j
 import RestaurantView from "../componentes/Home/Content/Restaurants/Restaurant/RestaurantView.js"
 import Cart from "../componentes/Cart.js";
 import Login from "../componentes/Auth/Login.js"
-import Register from "../componentes/Register/Register.js"
 import NoMatch from "../componentes/NoMatch.js"
 const routes = [
   
@@ -35,10 +34,6 @@ const routes = [
     ]
   }
   ,
-  {
-    path:"/registrar",
-    component:Register
-   },
   {
     path:"/:wtf",
     component:NoMatch
