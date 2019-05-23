@@ -1,5 +1,4 @@
-import React, { Component } from 'react'
-
+import React, { Component } from 'react';
 import {
   PassForgotWrapper,
   PassForgot,
@@ -20,17 +19,26 @@ export default class Register extends Component {
                   <h2>Bienvenido!</h2>
                   </LogoWrapper>
                   <form className="d-flex flex-column mt-3 form-group w-75 ">
+                    <span>Ingresa tu usuario:</span>
                     <div className="position-relative mb-2 input-group">
                     <div className="input-group-prepend">
                     <IconWrapper className="input-group-text" ><InputIconM /></IconWrapper>
                     </div>
-                    <input type="email" className="form-control " placeholder="Email"/>
+                    <input type="text" className="form-control " placeholder="Email"/>
                     </div>
+                    <span>Ingresa tu contraseña:</span>
                     <div className="position-relative mb-2 input-group">
                     <div className="input-group-prepend">
                     <IconWrapper className="input-group-text" ><InputIconL /></IconWrapper>
                     </div>
                     <input type="password" className="form-control " placeholder="Contraseña"/>
+                    </div>
+                    <span>Ingresa tu Email:</span>
+                    <div className="position-relative mb-2 input-group">
+                    <div className="input-group-prepend">
+                    <IconWrapper className="input-group-text" ><InputIconL /></IconWrapper>
+                    </div>
+                    <input type="email" className="form-control " placeholder="Email"/>
                     </div>
                  
 
