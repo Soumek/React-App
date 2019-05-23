@@ -41,7 +41,7 @@ export default class LoginView extends Component {
                  
 
                     <Button to="/home" className="btn btn-primary mb-2">Ingresar</Button>
-                    <Button onClick={this.props.onFormChange} className="btn btn-primary">¿No tienes una cuenta? ¡Regístrate aquí!</Button>
+                    <Button onClick={this.props.onLoginChange} className="btn btn-primary">¿No tienes una cuenta? ¡Regístrate aquí!</Button>
                   </form>
                 </div>
     );

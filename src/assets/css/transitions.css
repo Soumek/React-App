@@ -53,7 +53,7 @@
 
 .login-enter {
 
-  transform: translateX(40vw);
+  transform: translateX(50vw);
   
 }
 .login-enter-active {
@@ -68,7 +68,7 @@
 
 .login-exit {
   
-  transform: translateX(30vw);
+  transform: translateX(50vw);
   transition: all 500ms cubic-bezier(0.25,0.1,0.25,1);
 }
 .login-exit-active {
@@ -76,7 +76,35 @@ transition: all 500ms cubic-bezier(0.25,0.1,0.25,1);
   
 }
 .login-exit-done{
-  transform: translateX(30vw);
+  transform: translateX(50vw);
+  transition: all 500ms cubic-bezier(0.25,0.1,0.25,1);
+}
+
+
+.register-enter {
+  transform: translateX(50vw);
+}
+.register-enter-active {
+
+  transition: all 500ms cubic-bezier(0.25,0.1,0.25,1);
+  
+}
+.register-enter-done{
+  transform: translateX(0vw);
+  transition: all 500ms cubic-bezier(0.25,0.1,0.25,1);
+}
+
+.register-exit {
+  
+  transform: translateX(50vw);
+  transition: all 500ms cubic-bezier(0.25,0.1,0.25,1);
+}
+.register-exit-active {
+transition: all 500ms cubic-bezier(0.25,0.1,0.25,1);
+  
+}
+.register-exit-done{
+  transform: translateX(50vw);
   transition: all 500ms cubic-bezier(0.25,0.1,0.25,1);
 }
 

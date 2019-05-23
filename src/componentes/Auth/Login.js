@@ -16,14 +16,16 @@ export default class Login extends Component {
     activeregister: false
   };
 
-  handleFormChange = () => {
+  handleLoginChange = () => {
     this.setState(prevState => ({
-      activelogin: !prevState.activelogin,
+      activelogin: !prevState.activelogin
+    }));
+  };
+  handleRegisterChange=()=>{
+    this.setState(prevState => ({
       activeregister: !prevState.activeregister
     }));
-    setTimeout(function() {}.bind(this), 500);
-  };
-
+  }
   renderActiveForm = () => {
     if (this.state.activelogin === true) {
       return <LoginView onFormChange={this.handleFormChange} />;
@@ -43,26 +45,28 @@ export default class Login extends Component {
 
               <CardCol className="col-md-6">
                 <CSSTransition
-                  timeout={500}
+                  timeout={200}
                   in={this.state.activelogin}
                   classNames="login"
+                  onExited={()=>this.handleRegisterChange()}
                   unmountOnExit
                   appear
                 >
                   <Fragment>
-                    <LoginView onFormChange={this.handleFormChange} />
+                    <LoginView onLoginChange={this.handleLoginChange} />
                   </Fragment>
                 </CSSTransition>
 
                 <CSSTransition
-                  timeout={500}
+                  timeout={200}
                   in={this.state.activeregister}
                   classNames="login"
+                  onExited={()=>this.handleLoginChange()}
                   unmountOnExit
                   appear
                 >
                   <Fragment>
-                    <RegisterView onFormChange={this.handleFormChange} />
+                    <RegisterView onRegisterChange={this.handleRegisterChange} />
                   </Fragment>
                 </CSSTransition>
               </CardCol>
