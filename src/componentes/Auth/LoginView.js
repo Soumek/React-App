@@ -15,7 +15,12 @@ import {
  } from "./LoginStyles";
 
 export default class LoginView extends Component {
-  
+  handleClick=()=>{
+    this.props.onLoginChange("login","register");
+  }
+  handleForgot=()=>{
+    this.props.onLoginChange("login","forgot")
+  }
   render() {
     return (
       <div className="card-body d-flex align-items-center flex-column  ">
@@ -23,7 +28,7 @@ export default class LoginView extends Component {
                   <h2>Umbani</h2>
                   </LogoWrapper>
                   <PassForgotWrapper className="position-relative mt-3 mb-3">
-                    <PassForgot>¿Olvidó su contraseña?</PassForgot>
+                    <PassForgot onClick={this.handleForgot}>¿Olvidó su contraseña?</PassForgot>
                   </PassForgotWrapper>
                   <form className="d-flex flex-column mt-3 form-group w-75 ">
                     <div className="position-relative mb-2 input-group">
@@ -38,10 +43,8 @@ export default class LoginView extends Component {
                     </div>
                     <input type="password" className="form-control " placeholder="Contraseña"/>
                     </div>
-                 
-
                     <Button to="/home" className="btn btn-primary mb-2">Ingresar</Button>
-                    <Button onClick={this.props.onLoginChange} className="btn btn-primary">¿No tienes una cuenta? ¡Regístrate aquí!</Button>
+                    <Button onClick={this.handleClick} className="btn btn-primary">¿No tienes una cuenta? ¡Regístrate aquí!</Button>
                   </form>
                 </div>
     );

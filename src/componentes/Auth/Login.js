@@ -6,6 +6,7 @@ import Card from "react-bootstrap/Card";
 import loginCardImg from "../../assets/loginCardImg.jpg";
 import LoginView from "./LoginView";
 import RegisterView from "../Register/RegisterView";
+import ForgotView from "../Forgot/ForgotView";
 
 //Estilos de Login
 import { CardWrapper, CardRow, CardCol, CardImgL, Button } from "./LoginStyles";
@@ -13,26 +14,37 @@ import { CardWrapper, CardRow, CardCol, CardImgL, Button } from "./LoginStyles";
 export default class Login extends Component {
   state = {
     activelogin: true,
-    activeregister: false
+    activeregister: false,
+    activeforgot: false,
+    selectedform: ""
   };
 
-  handleLoginChange = () => {
-    this.setState(prevState => ({
-      activelogin: !prevState.activelogin
-    }));
+  handleRenderChange = (option, next) => {
+    this.setState(
+      {
+        selectedform: next
+      },
+      () => {
+        if (option === "login") {
+          this.setState(prevState => ({
+            activelogin: !prevState.activelogin
+          }));
+        }
+
+        if (option === "register") {
+          this.setState(prevState => ({
+            activeregister: !prevState.activeregister
+          }));
+        }
+        if (option === "forgot") {
+          this.setState(prevState => ({
+            activeforgot: !prevState.activeforgot
+          }));
+        }
+      }
+    );
   };
-  handleRegisterChange=()=>{
-    this.setState(prevState => ({
-      activeregister: !prevState.activeregister
-    }));
-  }
-  renderActiveForm = () => {
-    if (this.state.activelogin === true) {
-      return <LoginView onFormChange={this.handleFormChange} />;
-    } else {
-      return <RegisterView onFormChange={this.handleFormChange} />;
-    }
-  };
+
   render() {
     return (
       <div className="container">
@@ -48,12 +60,17 @@ export default class Login extends Component {
                   timeout={200}
                   in={this.state.activelogin}
                   classNames="login"
-                  onExited={()=>this.handleRegisterChange()}
+                  onExited={() =>
+                    this.handleRenderChange(this.state.selectedform)
+                  }
                   unmountOnExit
                   appear
                 >
                   <Fragment>
-                    <LoginView onLoginChange={this.handleLoginChange} />
+                    <LoginView
+                      id="login"
+                      onLoginChange={this.handleRenderChange}
+                    />
                   </Fragment>
                 </CSSTransition>
 
@@ -61,12 +78,34 @@ export default class Login extends Component {
                   timeout={200}
                   in={this.state.activeregister}
                   classNames="login"
-                  onExited={()=>this.handleLoginChange()}
+                  onExited={() =>
+                    this.handleRenderChange(this.state.selectedform)
+                  }
                   unmountOnExit
                   appear
                 >
                   <Fragment>
-                    <RegisterView onRegisterChange={this.handleRegisterChange} />
+                    <RegisterView
+                      id="register"
+                      onRegisterChange={this.handleRenderChange}
+                    />
+                  </Fragment>
+                </CSSTransition>
+                <CSSTransition
+                  timeout={200}
+                  in={this.state.activeforgot}
+                  classNames="login"
+                  onExited={() =>
+                    this.handleRenderChange(this.state.selectedform)
+                  }
+                  unmountOnExit
+                  appear
+                >
+                  <Fragment>
+                    <ForgotView
+                      id="forgot"
+                      onForgotChange={this.handleRenderChange}
+                    />
                   </Fragment>
                 </CSSTransition>
               </CardCol>

@@ -8,16 +8,16 @@ import {
   InputIconL,
   IconWrapper
  } from "../Auth/LoginStyles";
-import{LogoWrapper} from './RegisterStyles'
-export default class Register extends Component {
+import{LogoWrapper} from '../Register/RegisterStyles'
+export default class ForgotView extends Component {
   handleClick=()=>{
-    this.props.onRegisterChange("register","login");
+    this.props.onForgotChange("forgot","login");
   }
   render() {
     return (
      <div className="card-body d-flex align-items-center flex-column  ">
                   <LogoWrapper className="d-flex justify-content-center align-items-start">
-                  <h2>Bienvenido!</h2>
+                  <h2>Olvidaste tu contraseña</h2>
                   </LogoWrapper>
                   <form className="d-flex flex-column mt-3 form-group w-75 ">
                     <div className="position-relative mb-2 input-group">
