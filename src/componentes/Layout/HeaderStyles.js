@@ -83,6 +83,12 @@ export const BCarousel = styled(Carousel)`
     height: 540px;
     border-radius: 20px;
   }
+  >div>*>img{
+    height:100%;
+  }
+  >div.carousel-inner>div.carousel-item{
+    height:100%;
+  }
   > ol.carousel-indicators > li {
     width: 10px;
     height: 10px;
