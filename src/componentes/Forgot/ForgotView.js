@@ -26,16 +26,7 @@ export default class ForgotView extends Component {
                     </div>
                     <input type="email" className="form-control " placeholder="Email"/>
                     </div>
-                    <div className="position-relative mb-2 input-group">
-                    <div className="input-group-prepend">
-                    <IconWrapper className="input-group-text" ><InputIconL /></IconWrapper>
-                    </div>
-                    <input type="password" className="form-control " placeholder="Contraseña"/>
-                    </div>
-                 
-
-                    <Button to="/home" className="btn btn-primary mb-2">Ingresar</Button>
-                    <Button onClick={this.handleClick} className="btn btn-primary">¿No tienes una cuenta? ¡Regístrate aquí!</Button>
+                    <Button onClick={this.handleClick} className="btn btn-primary">Volver al login</Button>
                   </form>
                 </div>
     )

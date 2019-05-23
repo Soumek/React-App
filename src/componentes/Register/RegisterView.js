@@ -42,8 +42,8 @@ export default class Register extends Component {
                     </div>
                  
 
-                    <Button to="/home" className="btn btn-primary mb-2">Ingresar</Button>
-                    <Button onClick={this.handleClick} className="btn btn-primary">¿No tienes una cuenta? ¡Regístrate aquí!</Button>
+                    <Button to="/home" className="btn btn-primary mb-2">Registrate</Button>
+                    <Button onClick={this.handleClick} className="btn btn-primary">¿Tienes una cuenta? ¡Vuelve al login aquí!</Button>
                   </form>
                 </div>
     )
