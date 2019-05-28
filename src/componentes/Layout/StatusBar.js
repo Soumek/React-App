@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from "react";
-import { CSSTransition } from "react-transition-group";
 import user from "../../assets/img/user.png";
 import { Icon, UserIcon } from "./HeaderStyles";
 import UserMenu from "./UserMenu";
@@ -34,16 +33,12 @@ export default class StatusBar extends Component {
         </div>
         <div className="col-md-4 d-flex justify-content-center position-relative">
          
-          <UserIcon onClick={this.handleUserMenu}>
+          <UserIcon onClick={this.handleUserMenu} >
             <img src={user} alt='' />
           </UserIcon>
-          <CSSTransition
-      timeout={300}
-        in={this.state.openUserMenu}
-        classNames="menu"
-      >
+        
       <Fragment>{this.renderUserMenu()}</Fragment>
-      </CSSTransition>
+  
              
          
         </div>

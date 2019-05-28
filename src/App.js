@@ -1,24 +1,30 @@
 import React, { Component, Fragment } from "react";
-import { BrowserRouter as Router, Switch } from "react-router-dom";
+import Session from './componentes/Session';
+import { BrowserRouter as Router, Switch,Redirect } from "react-router-dom";
 import RouteWithSubRoutes from "./componentes/RouteWithSubRoutes";
 import routes from "./routes/routes";
+import "./assets/css/transitions.css";
+
 // import Login from './componentes/Login'
 
-import "./assets/css/transitions.css";
+
 // import "./assets/css/bootstrap.min.css";
-export default class App extends Component {
-  render() {
+ const App=({refetch,session})=>{
     return (
+      
       <Router>
         <Fragment>
           <Switch>
             {routes.map((route, i) => (
-              <RouteWithSubRoutes key={i} {...route} />
+              <RouteWithSubRoutes key={i} {...route} refetch={refetch} session={session} />
             ))}  
              
           </Switch>
         </Fragment>
       </Router>
     );
-  }
+  
 }
+
+ const RootSession=Session(App);
+ export {RootSession};

@@ -27,7 +27,7 @@ export default class RouteWithSubRoutes extends Component {
       path={route.path}
       render={props => (
         // pass the sub-routes down to keep nesting
-        <route.component {...props} {...this.props} routes={route.routes} />
+        <route.component {...props} {...this.props} refetch={this.props.refetch} session={this.props.session} routes={route.routes} />
       )}
     />
     )

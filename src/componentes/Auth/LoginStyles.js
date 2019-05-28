@@ -45,7 +45,7 @@ export const PassForgotWrapper = styled.div`
   text-align: center;
 `;
 export const PassForgot = styled.span`
- 
+  cursor:pointer;
   &:before,
   &:after {
     content: "";
@@ -73,9 +73,14 @@ export const InputIconL = styled(LockIcon)`${InputIconStyles}`;
 export const IconWrapper=styled.span`
 background-color:#fff;
 `;
-export const Button = styled(Link)`
+export const Button = styled.button`
 background-color:tomato;
 border-color:tomato;
+&:disabled{
+background-color:tomato;
+border-color:tomato;
+
+}
 &:hover{
   border-color:#ff4d2e;
   background-color:#ff4d2e;

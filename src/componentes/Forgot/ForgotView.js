@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-
 import {
   PassForgotWrapper,
   PassForgot,
@@ -26,7 +25,7 @@ export default class ForgotView extends Component {
                     </div>
                     <input type="email" className="form-control " placeholder="Email"/>
                     </div>
-                    <Button onClick={this.handleClick} className="btn btn-primary">Volver al login</Button>
+                    <Button type="button" onClick={this.handleClick} className="btn btn-primary">Volver al login</Button>
                   </form>
                 </div>
     )

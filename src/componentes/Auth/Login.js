@@ -70,6 +70,7 @@ export default class Login extends Component {
                     <LoginView
                       id="login"
                       onLoginChange={this.handleRenderChange}
+                      refetch={this.props.refetch}
                     />
                   </Fragment>
                 </CSSTransition>

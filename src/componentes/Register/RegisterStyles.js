@@ -6,3 +6,7 @@ width:100%;
 >h2{
   font-size:3rem;
 }`;
+
+export const BacktoLogin=styled.span`
+cursor: pointer;
+`;

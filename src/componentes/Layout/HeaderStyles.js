@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import Carousel from "react-bootstrap/Carousel";
 export const NavHeader = styled.header`
   height: 144px;
@@ -35,8 +35,13 @@ export const ContentWrapper=styled.section`
 `;
 export const NavAside = styled.aside`
   border-right: 3px solid tomato;
-
+   
+  >div.flex-column{
+    position:sticky;
+    top:0px; 
+  }
 `;
+
 export const NavItem = styled(NavLink)`
   padding: 20px;
   width: 100%;
@@ -55,23 +60,36 @@ export const NavItem = styled(NavLink)`
   }
 `;
 export const UserNavMenu = styled.div`
-  background-color: tomato;
+  background-color: white;
   top: 47px;
   width: 90px;
   z-index: 10;
-
+  border:1px solid tomato;
+  border-radius:5px;
+  box-shadow:0 2px 2px rgba(0,0,0,0.3);
   > ul {
     list-style: none;
     padding-left: 0px;
     text-align: center;
     margin-bottom: 0;
   }
-  > ul > li {
-    color: white;
-    padding: 5px 0px 5px 0px;
-  }
 `;
+export const UserNavLink=styled(Link)`
+  color: black;
+  padding: 10px 0px 10px 0px;
+  display:block;
+  text-decoration:none;
+  border-radius: 5px 5px 0px 0px;
+  &:hover{
+    color:black;
+    text-decoration:none;
+    background-color:#f8f9fa;
+  }
+  &:last-of-type{
+    border-radius:0px 0px 5px 5px;
+  }
 
+`;
 export const ContentTitle = styled.div`
   border-bottom: 0.1px solid #505050;
 `;
