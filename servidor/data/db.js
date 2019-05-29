@@ -1,8 +1,10 @@
 import mongoose,{Schema} from 'mongoose';
 import bcrypt from "bcrypt";
+import dotenv from 'dotenv';
+dotenv.config({path:'variables.env'});
 mongoose.Promise= global.Promise;
 
-mongoose.connect('mongodb://localhost/umbani', {useNewUrlParser:true});
+mongoose.connect(process.env.MONGODB, {useNewUrlParser:true});
 mongoose.set('setFindandModify', false);
 //definir el schema de clientes
 

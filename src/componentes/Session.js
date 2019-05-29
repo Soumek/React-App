@@ -6,7 +6,7 @@ import {USUARIO_ACTUAL} from '../queries';
 const Session=Component=>props =>(
     <Query query={USUARIO_ACTUAL}>
         {({loading,error,data,refetch})=>{
-            console.log(data);
+            
             return <Component {...props} refetch={refetch} session={data}/>
             
         }}    

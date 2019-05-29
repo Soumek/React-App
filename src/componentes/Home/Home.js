@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import Header from '../Layout/Header'
+import {Redirect} from 'react-router-dom';
 import {CSSTransition} from 'react-transition-group';
 import Aside from './Aside'
 import Content from './Content/Content'
@@ -15,18 +16,25 @@ export default class Home extends Component {
     
   }
   handleOpenAside=()=>{
-   
-   
     this.setState(prevState => ({
       openAside: !prevState.openAside
     }));
+  }
+  handleRedireccion=()=>{
     
+  }
+  componentWillMount(){
+    const actualUser=this.props.session.obtenerUsuario
+    if(!actualUser){
+      this.props.history.push('/');
+    }
   }
   
   render() {
    const {routes}=this.props;
     return (
       <Fragment>
+      {this.handleRedireccion()}
       <Header handleOpenAside={this.handleOpenAside} />
       <HomeContainer className="container-fluid">
       <div className="row">
