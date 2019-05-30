@@ -32,7 +32,7 @@ export const resolvers = {
         }
        
         //obtener el usuario actual del requerst de jwt verificado.
-        const usuario=Usuarios.findOne({usuario:usuarioActual.usuario})
+        const usuario=Usuarios.findOne({usuario:usuarioActual.usuario});
         return usuario;
     }
   },

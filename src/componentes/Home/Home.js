@@ -2,6 +2,7 @@ import React, { Component, Fragment } from "react";
 import Header from '../Layout/Header'
 import {Redirect} from 'react-router-dom';
 import {CSSTransition} from 'react-transition-group';
+import Session from '../Session';
 import Aside from './Aside'
 import Content from './Content/Content'
 import {HomeContainer} from '../Layout/HeaderStyles';
@@ -9,11 +10,9 @@ import {HomeContainer} from '../Layout/HeaderStyles';
 /*Se puee usar rutas, pero es incomodo, ya que tengo que especificar cada ruta para cada interfaz, si el home etc */
 
   
-export default class Home extends Component {
+ class Home extends Component {
   state={
-    openAside:true,
-
-    
+    openAside:true
   }
   handleOpenAside=()=>{
     this.setState(prevState => ({
@@ -23,12 +22,14 @@ export default class Home extends Component {
   handleRedireccion=()=>{
     
   }
+
   componentWillMount(){
-    const actualUser=this.props.session.obtenerUsuario
-    if(!actualUser){
-      this.props.history.push('/');
-    }
+    const sesionActual=this.props.session.obtenerUsuario;
+    // if(!sesionActual){
+    //  this.props.history.push('/');
+    // }
   }
+ 
   
   render() {
    const {routes}=this.props;
@@ -57,3 +58,5 @@ export default class Home extends Component {
     );
   }
 }
+
+export default Home;
