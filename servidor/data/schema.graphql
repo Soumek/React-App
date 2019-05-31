@@ -17,13 +17,10 @@ type Cliente{
     usuarioid:String
     nombre: String
     apellido: String
-    empresas:[Empresas]
     edad:Int
     rolcliente:String
 }
-type Empresas{
-    id:ID
-}
+
 type Empresa{
     id:ID
     clienteid:String,
@@ -32,6 +29,12 @@ type Empresa{
     imagen:String
     productos:[Producto]
 
+}
+type MenuItemEmpresa{
+    id:ID
+    tipo:String
+    icon:String
+    condicion:Int
 }
 type Producto{
     id:ID
@@ -47,6 +50,7 @@ type Query{
     getEmpresas:[Empresa]
     getProducto:[Producto]
     obtenerUsuario:VerifiedUsuario
+    getMenuItemsEmpresas:[MenuItemEmpresa]
 }
 
 input UsuarioInput{
@@ -83,7 +87,12 @@ input EmpresaInput{
     imagen:String!
     productos:[ProductoInput]
 }
-
+input MenuItemEmpresaInput{
+    id:ID
+    tipo:String!
+    icon:String!
+    condicion:Int
+}
 input ActualizarEmpresaInput{
     id:ID
     nombre:String!
@@ -114,6 +123,9 @@ type Mutation{
     crearProducto(input:ProductoInput): String
     actualizarProducto(input:ProductoInput): String
     eliminarProducto(input:EliminarProductoInput):String
+    crearMenuItemEmpresa(input:MenuItemEmpresaInput):String
+    actualizarMenuItemEmpresa(input:MenuItemEmpresaInput):String
+    cambiarEstadoMenuItemEmpresa(condicion:Int!):String
     
 }
 

@@ -1,4 +1,6 @@
 import Home from "../componentes/Home/Home.js";
+import Admin from "../componentes/Admin/Admin.js";
+import NuevoCliente from '../componentes/Admin/NuevoCliente.js';
 import Sandwiches from "../componentes/Sandwich.js";
 import Restaurantes from "../componentes/Home/Content/Restaurants/Restaurantes.js";
 import RestaurantView from "../componentes/Home/Content/Restaurants/Restaurant/RestaurantView.js"
@@ -17,11 +19,9 @@ const routes = [
     routes: [
       
       {
-        path: "/home/cart",
-        component: Cart
-      },
-      {
         path: "/home",
+        icon:"utensils",
+        nombre:"Restaurantes",
         component: Restaurantes,
         routes:[
           {
@@ -29,8 +29,26 @@ const routes = [
             component:RestaurantView
           }
         ]
-      }
+      },
+      {
+        path: "/home/farmacias",
+        icon:"pills",
+        nombre:"Farmacias",
+        component: Cart
+      },
 
+    ]
+  },
+  {
+    path:"/admin",
+    component:Admin,
+    routes:[
+      {
+        path:"/admin/añadircliente",
+        icon:"users",
+        nombre:"Añadir Cliente",
+        component:NuevoCliente
+      }
     ]
   }
   ,

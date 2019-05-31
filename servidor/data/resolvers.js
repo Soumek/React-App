@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import bcrypt from 'bcrypt';
-import { Usuarios, Clientes, Empresas, Productos } from "./db";
+import { Usuarios, Clientes, Empresas, MenuEmpresas } from "./db";
 //Generar Token
 import dotenv from 'dotenv';
 dotenv.config({path:'variables.env'});
@@ -30,12 +30,16 @@ export const resolvers = {
       if(!usuarioActual){
           return null
         }
-       
         //obtener el usuario actual del requerst de jwt verificado.
         const usuario=Usuarios.findOne({usuario:usuarioActual.usuario});
         return usuario;
+    },
+    getMenuItemsEmpresas:(root)=>{
+          const items=MenuEmpresas.find({});
+          return items; 
+      }
     }
-  },
+  ,
   Mutation: {
     crearUsuario: async (root, { input }) => {
       const usuario=input.usuario.trim();
@@ -191,6 +195,48 @@ export const resolvers = {
             });
           }
         });
+      });
+    },
+    crearMenuItemEmpresa:(root,{input})=>{
+      const nuevoItem = new MenuEmpresas({
+        tipo:input.tipo,
+        icon:input.icon,
+        condicion:input.condicion
+      });
+      nuevoItem.id = nuevoItem._id;
+      return new Promise((resolve, object) => {
+        nuevoItem.save(error => {
+          if (error) rejects(error);
+          else resolve("Se ha añadido el nuevo item de menú!");
+        });
+      });
+    },
+    actualizarMenuItemEmpresa:(root,{input})=>{
+      return new Promise((resolve, object) => {
+        MenuEmpresas.findOneAndUpdate(
+          { _id: input.id },
+          input,
+          { new: true },
+          (error, empresa) => {
+            if (error) rejects(error);
+            else resolve("Se ha actualizado correctamente");
+          }
+        );
+      });
+    },
+    cambiarEstadoMenuItemEmpresa:(root,{condicion})=>{
+      const ActCondicion=(condicion===0)? condicion=1 : condicion=0;
+  
+      return new Promise((resolve, object) => {
+        MenuEmpresas.findOneAndUpdate(
+          { _id: input.id },
+          ActCondicion,
+          { new: true },
+          (error, empresa) => {
+            if (error) rejects(error);
+            else resolve("Se ha cambiado el estado correctamente");
+          }
+        );
       });
     }
   }

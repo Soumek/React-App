@@ -6,7 +6,7 @@ export default function UserMenu() {
     <UserNavMenu className="position-absolute">
     <ul>
       <UserNavLink>Perfil</UserNavLink>
-      <UserNavLink>Administrar</UserNavLink>
+      <UserNavLink to="/admin">Administrar</UserNavLink>
       <UserNavLink>Historial</UserNavLink>
       <CerrarSesion/>
     </ul>

@@ -11,6 +11,10 @@ mutation autenticarUsuario($usuario: String! $password: String!
 ){
   token
 } 
-}
+}`
 
-`
+export const ACTUALIZAR_MENU_EMPRESA=gql`
+mutation actualizarMenuItemEmpresa($input: MenuItemEmpresaInput) {
+  actualizarMenuItemEmpresa(input: $input)
+}
+`;

@@ -1,24 +1,30 @@
-import React, { Component } from "react";
-import {Icon, NavAside, NavItem} from '../Layout/HeaderStyles'
-import {withRouter} from 'react-router-dom'
+import React, { Component} from "react";
+import {NavAside} from "../Layout/HeaderStyles";
+import { withRouter } from "react-router-dom";
+import HomeAside from "./HomeAside";
+import AdminAside from "../Admin/AdminAside";
 class Aside extends Component {
- 
+  
+  handleAsideView = () => {
+    const actualView = this.props.match.url;
+    switch (actualView) {
+      case "/home": {
+        return <HomeAside routes={this.props.routes} />
+        break;
+      }
+      case "/admin": {
+        return <AdminAside routes={this.props.routes} />
+        break;
+      }
+      default:
+        break;
+    }
+  };
   render() {
-
-// Al parecer styled components genera problemas, es decir, sus estilos estan chocando con los de csstransitiongroup.
-return (
+    return (
       <NavAside className="col-md-2 px-0 ">
         <div className="d-flex align-items-start flex-column">
-          <NavItem exact to="/home/restaurantes" activeClassName="active"><Icon className="fa fa-utensils "/><span>Restaurantes</span></NavItem>
-          <NavItem exact to="/home/cart" activeClassName="active"><Icon className="fa fa-utensils"/><span>Restaurantes</span></NavItem>
-          <NavItem exact to="/home1"><Icon className="fa fa-utensils"/><span>Restaurantes</span></NavItem>
-          <NavItem exact to="/home1"><Icon className="fa fa-utensils"/><span>Restaurantes</span></NavItem>
-          <NavItem exact to="/home1"><Icon className="fa fa-utensils"/><span>Restaurantes</span></NavItem>
-          <NavItem exact to="/home1"><Icon className="fa fa-utensils"/><span>Restaurantes</span></NavItem>
-          <NavItem exact to="/home1"><Icon className="fa fa-utensils"/><span>Restaurantes</span></NavItem>
-          <NavItem exact to="/home1"><Icon className="fa fa-utensils"/><span>Restaurantes</span></NavItem>
-          <NavItem exact to="/home1"><Icon className="fa fa-utensils"/><span>Restaurantes</span></NavItem>
-          <NavItem exact to="/home1"><Icon className="fa fa-utensils"/><span>Restaurantes</span></NavItem>
+          {this.handleAsideView()}
         </div>
       </NavAside>
     );

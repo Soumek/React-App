@@ -33,9 +33,9 @@ import {HomeContainer} from '../Layout/HeaderStyles';
   
   render() {
    const {routes}=this.props;
+   console.log(routes);
     return (
       <Fragment>
-      {this.handleRedireccion()}
       <Header handleOpenAside={this.handleOpenAside} />
       <HomeContainer className="container-fluid">
       <div className="row">
@@ -47,7 +47,7 @@ import {HomeContainer} from '../Layout/HeaderStyles';
         appear
         
       >
-      <Fragment><Aside/></Fragment>
+      <Fragment><Aside routes={routes} /></Fragment>
       </CSSTransition>
       <Content asideGone={this.state.openAside} routes={routes} />
         

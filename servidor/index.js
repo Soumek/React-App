@@ -2,18 +2,20 @@ import express from "express";
 import { ApolloServer } from "apollo-server-express";
 import { typeDefs } from "./data/schema";
 import { resolvers } from "./data/resolvers";
+import cors from 'cors';
 import dotenv from 'dotenv';
 dotenv.config({path:'variables.env'});
 import jwt from 'jsonwebtoken';
 
 const app = express();
+
 const server = new ApolloServer({
   typeDefs,
   resolvers,
   context: async ({ req }) => {
     const token = req.headers["authorization"];
-    
-    if(token !== "null"){
+    console.log(token);
+    if(token !=="null"){
         try{
             //verificar el token del frontend(cliente)
             const usuarioActual=await jwt.verify(token,process.env.SECRETO);
@@ -29,7 +31,11 @@ const server = new ApolloServer({
 
   }
 });
-server.applyMiddleware({ app });
+app.use(cors({
+  origin:true,
+  credentials:true
+}));
+server.applyMiddleware({ app, cors:false});
 
 app.listen({ port: 5000 }, () =>
   console.log(

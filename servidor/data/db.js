@@ -60,4 +60,13 @@ const empresaSchema= new mongoose.Schema({
     productos:[productoSchema]
 });
 const Empresas=mongoose.model('empresas', empresaSchema);
-export {Usuarios, Clientes,Empresas, Productos};
+
+
+const menuempresasSchema= new mongoose.Schema({
+    tipo:String,
+    icon:String,
+    condicion:{ type: Number, default: 0 }
+});
+
+const MenuEmpresas=mongoose.model('menuempresas', menuempresasSchema);
+export {Usuarios, Clientes,Empresas, Productos, MenuEmpresas};

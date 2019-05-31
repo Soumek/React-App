@@ -9,3 +9,13 @@ query obtenerUsuario{
     }
 }
 `
+export const MENU_ITEMS_EMPRESAS=gql`
+query getMenuItemsEmpresas{
+    getMenuItemsEmpresas{
+        id
+        tipo
+      	icon
+      	condicion
+    }
+}
+`;
