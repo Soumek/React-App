@@ -51,11 +51,11 @@ export default class Login extends Component {
         <CardWrapper className="d-flex align-items-center">
           <Card>
             <CardRow className="row no-gutters">
-              <CardCol className="col-md-6">
+              <CardCol className="col-md-6 col-sm-6 col">
                 <CardImgL src={loginCardImg} className="card-img" alt="..." />
               </CardCol>
 
-              <CardCol className="col-md-6">
+              <CardCol className="col-md-6 col-sm-6 col">
                 <CSSTransition
                   timeout={200}
                   in={this.state.activelogin}

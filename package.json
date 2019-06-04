@@ -1,6 +1,7 @@
 {
   "name": "places",
   "version": "0.1.0",
+  "homepage":"https://umbani-app.herokuapp.com",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.0.0",
@@ -32,7 +33,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && mv build ./servidor/public",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -52,5 +53,6 @@
     "babel-preset-stage-0": "^6.24.1",
     "prettier": "1.17.1",
     "react-alice-carousel": "^1.13.11"
-  }
+  },
+  "proxy":"http://localhost:5000"
 }
