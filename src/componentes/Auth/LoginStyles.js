@@ -26,12 +26,24 @@ export const CardCol = styled(CardRow)`
 `;
 export const CardImgL = styled.img`
   height:100%;
+  width:100%;
+  object-fit:cover;
+  object-position:0 0;
+  @media(max-width:768px){
+    object-position:6% 0;
+  }
+  @media(max-width:468px){
+    font-size: 0.6rem;
+  }
 `;
 export const LogoWrapper=styled.div`
 width:100%;
 height:50%;
 >h2{
   font-size:3rem;
+  @media(max-width:468px){
+    font-size: 2rem;
+  }
 }
 `;
 export const CardImgR = styled.img`
@@ -62,11 +74,46 @@ export const PassForgot = styled.span`
   &:after {
     left: 67%;
   }
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+    &:before {
+    display:none;
+  }
+
+  &:after {
+   display:none;
+  }
+
+
+  }
 `;
 
+export const AuthInputs=styled.input`
+@media (max-width: 768px) {
+      font-size: 0.8rem;
+  }
+@media(max-width:468px){
+    font-size: 0.6rem;
+    padding:6px;
+  }
+`;
   /*Para recordar como se aplican estilos a varios elementos.*/
 const InputIconStyles=css`
+@media (max-width: 768px) {
+      font-size: 1rem;
+  }
 `;
+
+export const Icon = styled.i`
+  font-size: 1.5em;
+  @media (max-width: 768px) {
+      font-size: 1rem;
+  }
+  @media(max-width:468px){
+    font-size: 0.8rem;
+  }
+`;
+
 export const InputIconM = styled(MailIcon)`${InputIconStyles}`;
 
 export const InputIconL = styled(LockIcon)`${InputIconStyles}`;
@@ -90,4 +137,10 @@ border-color:tomato;
   border-color:#ff4d2e !important;
 }
 /* ~& */
+@media (max-width: 768px) {
+    font-size: 0.8rem;
+  }
+@media(max-width:468px){
+    font-size: 0.6rem;
+  }
 `;

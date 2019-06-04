@@ -9,9 +9,9 @@ import {
   PassForgotWrapper,
   PassForgot,
   Button,
-  InputIconM,
-  InputIconL,
-  IconWrapper
+  Icon,
+  IconWrapper,
+  AuthInputs
  } from "./LoginStyles";
  
  const initialState = {
@@ -98,15 +98,15 @@ validarForm = () => {
                       {error && <Error error={error} />}
                     <div className="position-relative mb-2 input-group">
                     <div className="input-group-prepend">
-                    <IconWrapper className="input-group-text" ><InputIconM /></IconWrapper>
+                    <IconWrapper className="input-group-text" ><Icon className="far fa-user" /></IconWrapper>
                     </div>
-                    <input type="text" name="usuario" onChange={this.actualizarState} value={usuario} className="form-control " placeholder="Usuario"/>
+                    <AuthInputs type="text" name="usuario" onChange={this.actualizarState} value={usuario} className="form-control " placeholder="Usuario"/>
                     </div>
                     <div className="position-relative mb-2 input-group">
                     <div className="input-group-prepend">
-                    <IconWrapper className="input-group-text" ><InputIconL /></IconWrapper>
+                    <IconWrapper className="input-group-text" ><Icon className="fa fa-lock" /></IconWrapper>
                     </div>
-                    <input type="password" name="password" onChange={this.actualizarState} value={password} className="form-control " placeholder="Contraseña"/>
+                    <AuthInputs type="password" name="password" onChange={this.actualizarState} value={password} className="form-control " placeholder="Contraseña"/>
                     </div>
                     <Button type="submit" disabled={loading || this.validarForm()} className="btn btn-primary mb-2">Ingresar</Button>
                     <Button type="button" onClick={this.handleClick} className="btn btn-primary">¿No tienes una cuenta? ¡Regístrate aquí!</Button>
