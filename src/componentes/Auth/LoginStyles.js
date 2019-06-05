@@ -22,7 +22,11 @@ export const CardRow = styled.div`
   }
 `;
 export const CardCol = styled(CardRow)`
-
+ &:first-child{
+  @media(max-width:468px){
+    display:none;
+  }
+ }
 `;
 export const CardImgL = styled.img`
   height:100%;
@@ -32,9 +36,7 @@ export const CardImgL = styled.img`
   @media(max-width:768px){
     object-position:6% 0;
   }
-  @media(max-width:468px){
-    font-size: 0.6rem;
-  }
+  
 `;
 export const LogoWrapper=styled.div`
 width:100%;

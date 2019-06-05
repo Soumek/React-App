@@ -7,7 +7,7 @@ import dotenv from 'dotenv';
 dotenv.config({path:'variables.env'});
 import jwt from 'jsonwebtoken';
 
-import path from 'path';
+
 
 const app = express();
 
@@ -39,11 +39,6 @@ app.use(cors({
 }));
 server.applyMiddleware({ app, cors:false});
 
-app.use(express.static('public'));
-
-app.get('*', (req,res)=>{
-  res.sendFile(path,resolve(__dirname,'public','index.html'));
-});
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () =>
   console.log(

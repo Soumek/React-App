@@ -4,14 +4,14 @@ import {USUARIO_ACTUAL} from '../queries';
 
 
 const Session=Component=>props =>(
-    <Query query={USUARIO_ACTUAL}>
+    <Query query={USUARIO_ACTUAL} fetchPolicy="cache-and-network">
         {({loading,error,data,refetch, networkStatus})=>{
             
-            if(networkStatus===7){
+            {/* if(networkStatus===7){
                 return (<Component {...props} refetch={refetch} session={data}/>);
-            }
+            } */}
             
-            return (<Fragment>Cargando..</Fragment>);
+            return (<Component {...props} refetch={refetch} session={data}/>);
             
                 
             
