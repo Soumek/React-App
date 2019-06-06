@@ -48,10 +48,8 @@ iniciarSesion = async (e, usuarioAutenticar) => {
      //Ejecutar el query una vez haya iniciado sesion
      await this.props.refetch();
      this.limpiarState();
-     setTimeout(()=>{
-      //Redireccionar
      this.props.history.push('/home');
-    },3000)
+
  
 
 

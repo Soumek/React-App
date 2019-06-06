@@ -35,7 +35,7 @@ export const CardImgL = styled.img`
   object-position:0 0;
   @media(max-width:768px){
     object-position:6% 0;
-  }
+  }  
   
 `;
 export const LogoWrapper=styled.div`

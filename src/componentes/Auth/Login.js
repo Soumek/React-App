@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component, Fragment, Suspense } from "react";
 import { CSSTransition } from "react-transition-group";
 import Card from "react-bootstrap/Card";
 
@@ -7,9 +7,9 @@ import loginCardImg from "../../assets/loginCardImg.jpg";
 import LoginView from "./LoginView";
 import RegisterView from "../Register/RegisterView";
 import ForgotView from "../Forgot/ForgotView";
-
+// import CardImg from "./CardImg";
 //Estilos de Login
-import { CardWrapper, CardRow, CardCol, CardImgL, Button } from "./LoginStyles";
+import { CardWrapper, CardRow, CardCol, CardImgL } from "./LoginStyles";
 
 export default class Login extends Component {
   state = {
