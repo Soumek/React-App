@@ -23,6 +23,7 @@ export const CardRow = styled.div`
 `;
 export const CardCol = styled(CardRow)`
  &:first-child{
+  background-color:salmon;
   @media(max-width:468px){
     display:none;
   }
@@ -32,7 +33,8 @@ export const CardImgL = styled.img`
   height:100%;
   width:100%;
   object-fit:cover;
-  object-position:0 0;
+  opacity:0.3
+  /*object-position:0 0;*/
   @media(max-width:768px){
     object-position:6% 0;
   }  

@@ -1,17 +1,6 @@
-import React,{Fragment} from "react";
-import styled,{keyframes} from "styled-components";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import 'react-lazy-load-image-component/src/effects/opacity.css';
-import loginCardImg2 from "../../assets/loginCardImg2.jpg";
-const LazyImage = styled(LazyLoadImage)`
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  opacity:0.3;
+import styled, { keyframes } from 'styled-components';
 
-`;
-
-const loaderAnimation = keyframes`
+export const loaderAnimation = keyframes`
   0%,
   80%,
   100% {
@@ -22,9 +11,38 @@ const loaderAnimation = keyframes`
   }
 `;
 
+export const logoSpin = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+`;
 
-const Div= styled.div`
-position:absolute;
+export const AppHeader = styled.header`
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+`;
+
+export const AppLogo = styled.img`
+  animation: ${logoSpin} infinite 20s linear;
+  height: 100px;
+`;
+
+export const Title = styled.h2`
+  font-size:24px;
+  margin-bottom:80px;
+`;
+
+export const Loader = styled.div`
+  position:absolute;
   top:0;
   bottom:0;
   right:0;
@@ -67,17 +85,4 @@ position:absolute;
   &:after {
     left: 3.5em;
   }
-
 `;
-const CardImg = ({ image }) => (
-  <Fragment>
-    <LazyImage
-      src={image} // use normal <img> attributes as props
-      placeholder={<Div>AAAAAAAAAAAAH!</Div>}
-
-      
-    />
-  </Fragment>
-);
-
-export default CardImg;
