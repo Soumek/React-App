@@ -43,15 +43,16 @@ const Img = ({ src, alt, ...props }) => {
 }
 
 const ImageContainer = styled.div`
-  width:500px;
-  height:281px;
+  width:100%;
+  height:100%;
   display:block;
-  border-radius:10px;
-  margin-bottom:20px;
   overflow:hidden;
   position:relative;
   img {
-    width:100%;
+    height:100%;
+  width:100%;
+  object-fit:cover;
+  opacity:0.3;
   }
   .blurry {
     filter:blur(10px);
@@ -67,14 +68,17 @@ const ImageContainer = styled.div`
 /*  an image wrapper component, that holds
     all of our data inside it, plus it
     get triggered to run only when scrolled into view. */
-const ImageWrapper = ({ image, nr, render }) => (
+const ImageWrapper = ({ image, nr, render }) => {
+
+return (
   render ?
   <ImageContainer>
     <Suspense fallback={
       <ImageContainer> {/* This gets shown while the full res image is preloading */}
-      <img className="blurry" src={image.small} alt={`img_small_${nr}`}/>
+      {/* <img className="blurry" src={image.small} alt={`img_small_${nr}`}/> */}
       {/* This gets shown below while the low res image is preloading */}
-      <Style.Loader>{'Loading...'}</Style.Loader>
+      <img src={image.small} className="blurry"/>
+      {/* <Style.Loader>{'Loading...'}</Style.Loader> */}
       </ImageContainer>
     }>
       <ImageContainer>
@@ -86,6 +90,8 @@ const ImageWrapper = ({ image, nr, render }) => (
   :
   <ImageContainer/>
 );
+  
+};
 
 
 export default ImageWrapper;
