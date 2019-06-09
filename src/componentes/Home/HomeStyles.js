@@ -83,7 +83,7 @@ export const BCarousel = styled(Carousel)`
   }
 `;
 /*Compontente Restaurant*/
-export const RestaurantContentWrapper=styled.section`
+export const RestaurantContentWrapper=styled.div`
 
 @media (max-width:768px){
   margin-top:4rem;

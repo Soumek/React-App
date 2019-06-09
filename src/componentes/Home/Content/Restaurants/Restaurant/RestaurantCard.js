@@ -2,7 +2,7 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import Pinchos from "../../../../../assets/img/pinchos_pollo.jpg";
 import styled from "styled-components";
-import { Icon } from "../../../HomeStyles";
+import { Icon,RestaurantContentWrapper } from "../../../HomeStyles";
 import {resto} from "../../../../../assets/constantes/fuentes";
 const RCard = styled(Card)`
   ${resto};
@@ -10,9 +10,16 @@ const RCard = styled(Card)`
   padding-right: 30px !important;
   @media (max-width: 576px) {
       height: 400px;
+      padding-right: 0px !important;
+      margin: 0px;
     }
   > div.CardWrapper {
+    
     position: relative;
+    @media (max-width: 576px) {
+      width:100%
+      padding-right: 10px !important;
+    }
   }
   > div.CardWrapper > div.card-img {
     width: 100%;
@@ -76,10 +83,10 @@ const RCard = styled(Card)`
 export default function RestaurantCard(props) {
   const { productos } = props;
   return (
-<div className="row">
+<RestaurantContentWrapper className="row">
   {productos.map((producto, index) => (
     
-    <RCard className="col-md-4 col-sm-6 col-12 px-0" key={index}>
+    <RCard className="col-md-4 col-sm-6 col-6 px-0 d-flex justify-content-center align-items-center" key={index}>
       <div className="CardWrapper">
         <Card.Img variant="top" src={Pinchos} />
         <div className="RCardBasket row no-gutters">
@@ -103,7 +110,7 @@ export default function RestaurantCard(props) {
     </RCard>
  
   ))}
-</div>
+</RestaurantContentWrapper>
   ); 
   
   
