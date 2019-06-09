@@ -49,11 +49,9 @@ export default class Register extends Component {
       email
     };
     return (
-      <div className="card-body d-flex align-items-center flex-column  ">
-        <LogoWrapper className="d-flex justify-content-center align-items-start mb-5">
-          <h3>
-            <strong>Crea</strong> una cuenta
-          </h3>
+      <div className="card-body d-flex align-items-center justify-content-center flex-column  ">
+        <LogoWrapper className="d-flex justify-content-center">
+          <h3><span>Crea</span> una cuenta</h3>
         </LogoWrapper>
         <Mutation mutation={NUEVO_USUARIO} variables={{ input }}>
           {(crearUsuario, { loading, error, data }) => {

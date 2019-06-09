@@ -8,14 +8,14 @@ import loginCardImg2Small from "../../assets/loginCardImg2_opt.jpg";
 import LoginView from "./LoginView";
 import RegisterView from "../Register/RegisterView";
 import ForgotView from "../Forgot/ForgotView";
-// import CardImg from "./CardImg";
-import ImageWrapper from "./ImageWrapper";
+import ImageLoader from "../Loading/ImageLoader";
 //Estilos de Login
-import { CardWrapper, CardRow, CardCol, CardImgL } from "./LoginStyles";
-const images={
-  large:loginCardImg2,
-  small:loginCardImg2Small
-}
+import { CardWrapper, CardRow, CardCol } from "./LoginStyles";
+
+const images = {
+  large: loginCardImg2,
+  small: loginCardImg2Small
+};
 export default class Login extends Component {
   state = {
     activelogin: true,
@@ -55,13 +55,11 @@ export default class Login extends Component {
         <CardWrapper className="d-flex align-items-center">
           <Card>
             <CardRow className="row no-gutters">
-              <CardCol className="col-md-6 col-sm-6 col  ">
-                {/*<CardImgL src={loginCardImg2} className="card-img" alt="..." />*/}
-               {/* <CardImg image={loginCardImg2} /> */}
-               <ImageWrapper image={images} nr={10} render={true} />
+              <CardCol className="col-sm-6 col-md-6">
+                <ImageLoader image={images} nr={10} render={true} />
               </CardCol>
 
-              <CardCol className="col-md-6 col-sm-6 col">
+              <CardCol className="col-12 col-sm-6 col-md-6">
                 <CSSTransition
                   timeout={200}
                   in={this.state.activelogin}

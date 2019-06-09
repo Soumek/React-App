@@ -32,7 +32,8 @@
     "react-scripts": "2.1.5",
     "react-select": "^2.4.3",
     "react-transition-group": "^2.9.0",
-    "styled-components": "^4.2.0"
+    "styled-components": "^4.2.0",
+    "webfontloader": "^1.6.28"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -1,8 +1,7 @@
 import styled, { css,keyframes } from "styled-components";
 
 //colores
-const primary=`tomato`;
-const secondary=`#49D295`;
+import {primary,secondary} from '../../assets/constantes/colores';
 
 
 const rotateCW = keyframes`

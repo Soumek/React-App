@@ -1,6 +1,6 @@
 import React from 'react'
 import loginCardImg from '../../../../assets/loginCardImg.jpg';
-import {BCarousel} from '../../../Layout/HeaderStyles';
+import {BCarousel} from '../../HomeStyles';
 import Carousel from 'react-bootstrap/Carousel'
 export default class Carousels extends React.Component {
   constructor(props, context) {

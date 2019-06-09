@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Icon, NavItem } from "../Layout/HeaderStyles";
+import { Icon, NavItem } from "./AdminStyles";
 export default function AdminAside(props) {
     const rutas = props.routes;
     return (

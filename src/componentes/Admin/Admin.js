@@ -1,9 +1,9 @@
 import React, { Component, Fragment } from "react";
 import {CSSTransition} from 'react-transition-group';
-import Header from "../Layout/Header";
+import Header from '../Layout/Header/Header';
 import Aside from "../Home/Aside";
 import Content from '../Home/Content/Content';
-import {HomeContainer} from '../Layout/HeaderStyles';
+import {HomeContainer} from './AdminStyles';
 export default class Admin extends Component {
   state = {
     openAside: true

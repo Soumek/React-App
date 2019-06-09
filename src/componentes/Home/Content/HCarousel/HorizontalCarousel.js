@@ -6,7 +6,7 @@ import {
   HCarousels,
   HCarouselButtonsPrev,
   HCarouselButtonsNext
-} from "../../../Layout/HeaderStyles";
+} from "../../HomeStyles";
 //Hay un bug en HCarousel que consiste en que al llegar a un elemento anterior mayor 
 //que el elemento actual, el slider se mueve para adelante y no deja ver el item activo
 //pero el problema general consiste en que se va de focus el item al clickear, porque re renderiza todo el array
@@ -16,7 +16,11 @@ export default class HorizontalCarousel extends React.Component {
     super(props);
     this.state = {
       galleryItems: [],
-      responsive: { 1024: { items: 5 } },
+      responsive: {
+        468: { items:2},
+        576: { items:3}, 
+        768: { items:4},
+        1024: { items: 5 } },
       activeItem: 1
     };
     this.Carousel = React.createRef();

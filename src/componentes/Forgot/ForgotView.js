@@ -1,10 +1,7 @@
 import React, { Component } from 'react'
 import {
-  PassForgotWrapper,
-  PassForgot,
   Button,
   InputIconM,
-  InputIconL,
   IconWrapper
  } from "../Auth/LoginStyles";
 import{LogoWrapper} from '../Register/RegisterStyles'
@@ -14,9 +11,9 @@ export default class ForgotView extends Component {
   }
   render() {
     return (
-     <div className="card-body d-flex align-items-center flex-column  ">
+     <div className="card-body d-flex align-items-center justify-content-center flex-column  ">
                   <LogoWrapper className="d-flex justify-content-center align-items-start">
-                  <h2>Olvidaste tu contraseña</h2>
+                  <h3 className="forgotTitle">Olvidaste tu contraseña</h3>
                   </LogoWrapper>
                   <form className="d-flex flex-column mt-3 form-group w-75 ">
                     <div className="position-relative mb-2 input-group">

@@ -1,6 +1,6 @@
-import React,{Component} from "react";
+import React,{Component,Fragment} from "react";
 import RestaurantCard from './RestaurantCard';
-
+import {RestaurantContentWrapper} from '../../../HomeStyles';
 
 export default class RestaurantContent extends Component {
   state={
@@ -49,12 +49,9 @@ export default class RestaurantContent extends Component {
   }
   render() {
     return (
-       <section >
-      <div className="row">
+      <Fragment>
         <RestaurantCard productos={this.state.productos}/>
-        
-      </div>
-    </section>
+      </Fragment>
     )
   }
 }

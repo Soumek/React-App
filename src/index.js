@@ -4,7 +4,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import { RootSession } from "./App";
-// import ApolloClient, {InMemoryCache} from 'apollo-boost';
+import WebFont from 'webfontloader';
 import { ApolloProvider } from "react-apollo";
 import { ApolloClient } from "apollo-client";
 import { InMemoryCache } from "apollo-cache-inmemory";
@@ -13,6 +13,13 @@ import { onError } from "apollo-link-error";
 import { ApolloLink } from "apollo-link";
 import * as serviceWorker from "./serviceWorker";
 
+
+WebFont.load({
+
+  google: {
+    families: ['Lato', 'Montserrat']
+
+   }});
 const cache = new InMemoryCache({
   addTypename: false
 });

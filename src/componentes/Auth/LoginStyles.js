@@ -1,11 +1,12 @@
 import styled,{css} from "styled-components";
-import { Link } from "react-router-dom";
 import MailIcon from '@material-ui/icons/Mail';
 import LockIcon from '@material-ui/icons/Lock';
-
+import {secondary} from '../../assets/constantes/colores';
+import {titulos, resto} from '../../assets/constantes/fuentes';
 export const CardWrapper = styled.div`
   height:100vh;
   overflow:hidden;
+  ${resto}
   > div.card{
     width:100%;
     height: 540px;
@@ -24,28 +25,29 @@ export const CardRow = styled.div`
 export const CardCol = styled(CardRow)`
  &:first-child{
   background-color:salmon;
-  @media(max-width:468px){
+  @media(max-width:576px){
     display:none;
   }
  }
 `;
-export const CardImgL = styled.img`
-  height:100%;
-  width:100%;
-  object-fit:cover;
-  opacity:0.3
-  /*object-position:0 0;*/
-  @media(max-width:768px){
-    object-position:6% 0;
-  }  
-  
-`;
+// export const CardImgL = styled.img`
+//   height:100%;
+//   width:100%;
+//   object-fit:cover;
+//   opacity:0.3;
+//   /*object-position:0 0;*/
+//   @media(max-width:768px){
+//     object-position:6% 0;
+//   }   
+// `;
 export const LogoWrapper=styled.div`
 width:100%;
-height:50%;
 >h2{
-  font-size:3rem;
-  @media(max-width:468px){
+  font-size:3.5rem;
+  color:${secondary};
+  ${titulos};
+  font-weight:bold;
+  @media(max-width:576px){
     font-size: 2rem;
   }
 }
@@ -56,7 +58,6 @@ height:100%;
 `
 
 export const PassForgotWrapper = styled.div`
-  
   width: 100%;
   text-align: center;
 `;
@@ -96,7 +97,7 @@ export const AuthInputs=styled.input`
 @media (max-width: 768px) {
       font-size: 0.8rem;
   }
-@media(max-width:468px){
+@media(max-width:576px){
     font-size: 0.6rem;
     padding:6px;
   }
@@ -113,7 +114,7 @@ export const Icon = styled.i`
   @media (max-width: 768px) {
       font-size: 1rem;
   }
-  @media(max-width:468px){
+  @media(max-width:576px){
     font-size: 0.8rem;
   }
 `;
@@ -144,7 +145,7 @@ border-color:tomato;
 @media (max-width: 768px) {
     font-size: 0.8rem;
   }
-@media(max-width:468px){
+@media(max-width:576px){
     font-size: 0.6rem;
   }
 `;

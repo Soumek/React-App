@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import RestaurantHeader from './RestaurantHeader';
 import RestaurantContent from './RestaurantContent';
-import {Spacer} from '../../../../Layout/HeaderStyles';
+import {Spacer} from '../../../HomeStyles';
 export default class RestaurantView extends Component {
   render() {
     return (

@@ -1,5 +1,5 @@
 import React, { Component} from "react";
-import {NavAside} from "../Layout/HeaderStyles";
+import {NavAside} from "./HomeStyles";
 import { withRouter } from "react-router-dom";
 import HomeAside from "./HomeAside";
 import AdminAside from "../Admin/AdminAside";

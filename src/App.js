@@ -5,7 +5,7 @@ import RouteWithSubRoutes from "./componentes/RouteWithSubRoutes";
 import routes from "./routes/routes";
 import "./assets/css/transitions.css";
 
-// const RouteWithSubRoutes= lazy(()=>import('./componentes/RouteWithSubRoutes'));
+
 
 
 
@@ -15,8 +15,9 @@ import "./assets/css/transitions.css";
       
       <Router>
         <Fragment>
+          
           <Switch>
-      
+            
             {routes.map((route, i) => (
               <RouteWithSubRoutes key={i} {...route} refetch={refetch} session={session} />
             ))}  

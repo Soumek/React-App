@@ -1,10 +1,9 @@
 import React, { Component, Fragment } from "react";
 import { withRouter, Switch } from "react-router-dom";
 import RouteWithSubRoutes from "../../RouteWithSubRoutes";
-import { ContentWrapper, ContentTitle } from "../../Layout/HeaderStyles";
+import { ContentWrapper} from "../HomeStyles";
 import { CSSTransition } from "react-transition-group";
-import Carousels from "./Carousel/Carousels";
-import HomeContent from "../HomeContent";
+import HomeContent from "./HomeContent";
 import AdminContent from "../../Admin/AdminContent";
 import Session from "../../Session";
 class Content extends Component {

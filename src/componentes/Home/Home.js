@@ -1,13 +1,10 @@
 import React, { Component, Fragment } from "react";
-import Header from '../Layout/Header'
-import {Redirect} from 'react-router-dom';
+import Header from '../Layout/Header/Header';
 import {CSSTransition} from 'react-transition-group';
-import Session from '../Session';
 import Aside from './Aside'
 import Content from './Content/Content'
-import {HomeContainer} from '../Layout/HeaderStyles';
+import {HomeContainer} from './HomeStyles';
 
-/*Se puee usar rutas, pero es incomodo, ya que tengo que especificar cada ruta para cada interfaz, si el home etc */
 
   
  class Home extends Component {

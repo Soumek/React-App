@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Icon, NavItem } from "../Layout/HeaderStyles";
+import { Icon, NavItem } from "./HomeStyles";
 export default function HomeAside(props) {
     const rutas = props.routes;
     return (

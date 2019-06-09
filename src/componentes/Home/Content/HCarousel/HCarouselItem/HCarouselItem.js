@@ -16,11 +16,10 @@ export default class HCarouselItem extends Component {
       return <NormalItem onClick={this.handleClickedItem}  id={this.props.id}/>
     }
   }
-  componentDidMount(){
-    
-  }
+  
   render() {
     return(
+      
       this.renderActivatedItem()
     )
    
