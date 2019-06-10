@@ -31,7 +31,7 @@ export default class StatusBar extends Component {
           <Icon className="fa fa-map-marker-alt" />
         </div>
         <div className="col d-flex justify-content-center position-relative">
-          <UserIcon   onClick={this.handleUserMenu} onBlur={this.handleBlur} tabIndex="1">
+          <UserIcon   onClick={this.handleUserMenu} onBlur={this.handleBlur} tabIndex="0">
             <img src={user} alt="" />
           </UserIcon>
           <Fragment>{this.renderUserMenu()}</Fragment>

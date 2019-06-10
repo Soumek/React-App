@@ -16,6 +16,7 @@ const CerrarSesion = ({history}) =>(
              <UserNavLink
                 as="li"
                 onClick={()=>cerrarSesionUsuario(cliente,history)}
+                tabIndex="0"
              >
                  Cerrar sesión
              </UserNavLink>

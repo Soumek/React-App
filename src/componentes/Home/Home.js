@@ -30,7 +30,6 @@ import {HomeContainer} from './HomeStyles';
   
   render() {
    const {routes}=this.props;
-   console.log(routes);
     return (
       <Fragment>
       <Header handleOpenAside={this.handleOpenAside} />

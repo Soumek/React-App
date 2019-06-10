@@ -31,6 +31,9 @@ export const UserIcon = styled.div`
     width: 50px;
     height: 50px;
   }
+  &:focus{
+    outline:none;
+  }
 `;
 export const Icon = styled.i`
   font-size: 1.5em;
