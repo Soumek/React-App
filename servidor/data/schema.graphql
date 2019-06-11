@@ -44,13 +44,20 @@ type Producto{
     precio:String
     descuento:String
 }
+type SubRuta{
+    id:ID
+    path:String
+    icon:String
+    url:String
+    condicion:Int
+}
 type Query{
     getUsuarios(limite:Int, offset:Int):[Usuario]
     getClientes:[Cliente]
     getEmpresas:[Empresa]
     getProducto:[Producto]
     obtenerUsuario:VerifiedUsuario
-    getMenuItemsEmpresas:[MenuItemEmpresa]
+    getSubRutas:[SubRuta]
 }
 
 input UsuarioInput{
@@ -87,10 +94,16 @@ input EmpresaInput{
     imagen:String!
     productos:[ProductoInput]
 }
-input MenuItemEmpresaInput{
+input RutaInput{
+    nombre:String!
+    subrutas:[SubRutaInput]
+}
+input SubRutaInput{
     id:ID
-    tipo:String!
+    nombre:String!
+    path:String!
     icon:String!
+    url:String!
     condicion:Int
 }
 input ActualizarEmpresaInput{
@@ -123,8 +136,10 @@ type Mutation{
     crearProducto(input:ProductoInput): String
     actualizarProducto(input:ProductoInput): String
     eliminarProducto(input:EliminarProductoInput):String
-    crearMenuItemEmpresa(input:MenuItemEmpresaInput):String
-    actualizarMenuItemEmpresa(input:MenuItemEmpresaInput):String
+    crearRuta(input:RutaInput):String
+    crearSubRuta(input:SubRutaInput):String
+    
+    actualizarMenuItemEmpresa(input:SubRutaInput):String
     cambiarEstadoMenuItemEmpresa(condicion:Int!):String
     
 }

@@ -4,6 +4,8 @@ import Header from '../Layout/Header/Header';
 import Aside from "../Home/Aside";
 import Content from '../Home/Content/Content';
 import {HomeContainer} from './AdminStyles';
+import adminroutesjson from '../../routes/adminroutesjson';
+const {adminsubroutes}=JSON.parse(adminroutesjson);
 export default class Admin extends Component {
   state = {
     openAside: true
@@ -14,7 +16,7 @@ export default class Admin extends Component {
     }));
   };
   render() {
-    const routes=this.props.routes;
+
     return (
       <Fragment>
         <Header handleOpenAside={this.handleOpenAside} />
@@ -28,10 +30,10 @@ export default class Admin extends Component {
               appear
             >
               <Fragment>
-                <Aside routes={routes} />
+                <Aside routes={adminsubroutes} />
               </Fragment>
             </CSSTransition>
-            <Content asideGone={this.state.openAside} routes={routes} />
+            <Content asideGone={this.state.openAside} routes={adminsubroutes} />
           </div>
         </HomeContainer>
       </Fragment>

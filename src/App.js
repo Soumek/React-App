@@ -1,13 +1,15 @@
 import React, { Fragment, lazy, Suspense } from "react";
 import Session from './componentes/Session';
 import { BrowserRouter as Router, Switch} from "react-router-dom";
-import RouteWithSubRoutesJson from "./componentes/RouteWithSubRoutesJson";
+import RouteWithSubRoutes from "./componentes/RouteWithSubRoutes";
+// import RouteWithSubRoutesJson from "./componentes/RouteWithSubRoutesJson";
 import routes from "./routes/routes";
-import routesjson from './routes/routesjson';
+// import routesjson from './routes/routesjson';
 import "./assets/css/transitions.css";
 
 
-console.log(JSON.parse(routesjson));
+// const {jsonroutes}=JSON.parse(routesjson);
+// console.log(jsonroutes)
  const App=({refetch,session})=>{
     return (
       
@@ -16,8 +18,8 @@ console.log(JSON.parse(routesjson));
           
           <Switch>
             
-            {routes.map((routesjson, i) => (
-              <RouteWithSubRoutesJson key={i} {...routesjson} refetch={refetch} session={session} />
+            {routes.map((route, i) => (
+              <RouteWithSubRoutes key={i} {...route} refetch={refetch} session={session} />
             ))}  
     
           </Switch>

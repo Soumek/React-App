@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { withRouter, Switch } from "react-router-dom";
-import RouteWithSubRoutes from "../../RouteWithSubRoutes";
+// import RouteWithSubRoutes from "../../RouteWithSubRoutes";
+import RouteWithSubRoutesJson from "../../RouteWithSubRoutesJson";
 import { ContentWrapper} from "../HomeStyles";
 import { CSSTransition } from "react-transition-group";
 import HomeContent from "./HomeContent";
@@ -37,7 +38,7 @@ class Content extends Component {
 
             <Switch>
               {routes.map((route, i) => (
-                <RouteWithSubRoutes key={i} {...route} />
+                <RouteWithSubRoutesJson key={i} {...route} />
               ))}
             </Switch>
           </ContentWrapper>

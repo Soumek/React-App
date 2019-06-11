@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import bcrypt from 'bcrypt';
-import { Usuarios, Clientes, Empresas, MenuEmpresas } from "./db";
+import { Usuarios, Clientes, Empresas, Rutas} from "./db";
 //Generar Token
 import dotenv from 'dotenv';
 dotenv.config({path:'variables.env'});
@@ -34,9 +34,9 @@ export const resolvers = {
         const usuario=Usuarios.findOne({usuario:usuarioActual.usuario});
         return usuario;
     },
-    getMenuItemsEmpresas:(root)=>{
-          const items=MenuEmpresas.find({});
-          return items; 
+    getSubRutas:(root,{ruta})=>{
+          const rutaActual=Rutas.findOne({nombre:ruta});
+          return rutaActual;
       }
     }
   ,
@@ -197,17 +197,35 @@ export const resolvers = {
         });
       });
     },
-    crearMenuItemEmpresa:(root,{input})=>{
-      const nuevoItem = new MenuEmpresas({
-        tipo:input.tipo,
-        icon:input.icon,
-        condicion:input.condicion
+    crearRuta:(root,{input})=>{
+      const nuevaruta = new Rutas({
+        nombre: input.nombre,
+        subrutas:input.subrutas
       });
-      nuevoItem.id = nuevoItem._id;
+      nuevaruta.id = nuevaruta._id;
       return new Promise((resolve, object) => {
-        nuevoItem.save(error => {
+        nuevaruta.save(error => {
           if (error) rejects(error);
-          else resolve("Se ha añadido el nuevo item de menú!");
+          else resolve("Se ha añadido la nueva ruta!");
+        });
+      });
+    },
+    crearSubRuta:(root,{input})=>{
+      return new Promise((resolve, object) => {
+        Rutas.findOne({nombre:input.nombre}, (error, ruta) => {
+          if (error) console.log(error);
+          else {
+            ruta.subrutas.push({
+              path:input.path,
+              icon:input.icon,
+              url:input.url,
+              condicion:input.condicion
+            });
+            ruta.save(error => {
+              if (error) rejects(error);
+              else resolve("El producto se ha agregado correctamente.");
+            });
+          }
         });
       });
     },

@@ -18,3 +18,9 @@ mutation actualizarMenuItemEmpresa($input: MenuItemEmpresaInput) {
   actualizarMenuItemEmpresa(input: $input)
 }
 `;
+
+export const CREAR_SUBRUTA=gql`
+mutation crearSubRuta($input: SubRutaInput) {
+  crearSubRuta(input: $input)
+}
+`;

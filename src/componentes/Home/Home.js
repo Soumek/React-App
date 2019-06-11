@@ -4,9 +4,9 @@ import {CSSTransition} from 'react-transition-group';
 import Aside from './Aside'
 import Content from './Content/Content'
 import {HomeContainer} from './HomeStyles';
+import homeroutesjson from '../../routes/homeroutesjson';
 
-
-  
+const {homesubroutes}=JSON.parse(homeroutesjson);  
  class Home extends Component {
   state={
     openAside:true
@@ -29,7 +29,7 @@ import {HomeContainer} from './HomeStyles';
  
   
   render() {
-   const {routes}=this.props;
+    console.log(homesubroutes);
     return (
       <Fragment>
       <Header handleOpenAside={this.handleOpenAside} />
@@ -43,9 +43,9 @@ import {HomeContainer} from './HomeStyles';
         appear
         
       >
-      <Fragment><Aside routes={routes} /></Fragment>
+      <Fragment><Aside routes={homesubroutes} /></Fragment>
       </CSSTransition>
-      <Content asideGone={this.state.openAside} routes={routes} />
+      <Content asideGone={this.state.openAside} routes={homesubroutes} />
         
   
       </div>

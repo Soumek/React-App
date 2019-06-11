@@ -31,7 +31,7 @@ export default class RouteWithSubRoutes extends Component {
       render={props => (
         // pass the sub-routes down to keep nesting
         <Suspense fallback={<Loading/>}>
-        <route.component {...props} {...this.props} refetch={this.props.refetch}  routes={route.routes} />
+        <route.component {...props} {...this.props} refetch={this.props.refetch} />
         </Suspense>
         
 

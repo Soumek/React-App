@@ -19,13 +19,11 @@ llamandolo asi ocmo this.props.routes, para declarar nuevas rutas internas. */
 // }
 
 
-const LazyImport = ({ component,url }) => {
- 
-// const Componente= lazy(()=>import(`../componentes/${url}`));   
+const LazyImport = ({url, ...props }) => {
+
+const Componente= lazy(()=>import(`../componentes/${url}`));   
     return (
-     <h1>
-     hue
-     </h1>
+     <Componente {...props}/>
     );
 };
 
@@ -35,17 +33,17 @@ const LazyImport = ({ component,url }) => {
 export default class RouteWithSubRoutesJson extends Component {
   
   render() {  
-    const routesjson =this.props
-    console.log(routesjson);
+    const route =this.props
+    
     return (
 
      <Route
-      exact={routesjson.exact}
-      path={routesjson.path}
+      exact={route.exact}
+      path={route.path}
       render={props => (
         // pass the sub-routes down to keep nesting
         <Suspense fallback={<Loading/>}>
-          <LazyImport component={routesjson.component} url={routesjson.url} />
+          <LazyImport component={route.component} url={route.url} {...this.props}/>
         </Suspense>
         
 

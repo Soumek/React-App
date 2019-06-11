@@ -67,6 +67,17 @@ const menuempresasSchema= new mongoose.Schema({
     icon:String,
     condicion:{ type: Number, default: 0 }
 });
-
+const subrutasSchema= new mongoose.Schema({
+    path:String,
+    icon:String,
+    url:String,
+    condicion:{ type: Number, default: 0 }
+});
+const SubRutas=mongoose.model('subrutas',subrutasSchema);
+const rutasSchema= new mongoose.Schema({
+    nombre:String,
+    subrutas:[subrutasSchema]
+});
+const Rutas=mongoose.model('rutas',rutasSchema);
 const MenuEmpresas=mongoose.model('menuempresas', menuempresasSchema);
-export {Usuarios, Clientes,Empresas, Productos, MenuEmpresas};
+export {Usuarios, Clientes,Empresas, Productos, MenuEmpresas, Rutas,SubRutas};

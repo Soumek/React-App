@@ -25,12 +25,42 @@ const routes = [
   },
   {
     path: "/home",
-    component: Home
-    
+    component: Home,
+    routes: [
+      
+      {
+        path: "/home",
+        icon:"utensils",
+        nombre:"Restaurantes",
+        component: Restaurantes,
+        routes:[
+          {
+            path:"/home/restaurantes/:id",
+            component:RestaurantView
+          }
+        ]
+      },
+      {
+        path: "/home/farmacias",
+        icon:"pills",
+        nombre:"Farmacias",
+        component: Cart
+      },
+      
+
+    ]
   },
   {
     path:"/admin",
-    component:Admin
+    component:Admin,
+    routes:[
+      {
+        path:"/admin/añadircliente",
+        icon:"users",
+        nombre:"Añadir Cliente",
+        component:NuevoCliente
+      }
+    ]
   }
   ,
   {
