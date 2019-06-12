@@ -4,9 +4,9 @@ import styled, { css } from "styled-components";
 
 export const titulos = css`
   
-  font-family: "Lato", sans-serif;
+  /* font-family: "Lato", sans-serif; */
 `;
 
 export const resto = css`
-  font-family: "Montserrat", sans-seriff;
+  /* font-family: "Montserrat", sans-seriff; */
 `;

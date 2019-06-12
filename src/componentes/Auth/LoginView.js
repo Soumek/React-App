@@ -48,7 +48,10 @@ class LoginView extends Component {
       await this.props.refetch();
       this.limpiarState();
       this.props.history.push("/home");
-    });
+    }).catch((error)=>{
+      console.log(error);
+    })
+
   };
 
   validarForm = () => {
@@ -75,6 +78,7 @@ class LoginView extends Component {
         <Mutation
           mutation={AUTENTICAR_USUARIO}
           variables={{ usuario, password }}
+         
         >
           {(usuarioAutenticar, { loading, error, data }) => {
             return (

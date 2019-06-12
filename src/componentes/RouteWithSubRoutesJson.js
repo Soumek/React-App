@@ -20,7 +20,7 @@ llamandolo asi ocmo this.props.routes, para declarar nuevas rutas internas. */
 
 
 const LazyImport = ({url, ...props }) => {
-
+  console.log(url);
 const Componente= lazy(()=>import(`../componentes/${url}`));   
     return (
      <Componente {...props}/>

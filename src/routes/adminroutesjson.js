@@ -2,11 +2,11 @@ export const adminroutesjson = `
   {
     "adminsubroutes":[
         {
-            "path":"/admin/rutas",
+            "path":"/admin",
             "icon":"users",
             "nombre":"Administrar Rutas",
             "url":"Admin/NuevaRuta"
-          }
+        }
     ]
   }
 

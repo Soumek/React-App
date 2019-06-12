@@ -45,10 +45,10 @@ type Producto{
     descuento:String
 }
 type SubRuta{
-    id:ID
+    nombresubruta:String
     path:String
-    icon:String
-    url:String
+    icono:String
+    ubicacion:String
     condicion:Int
 }
 type Query{
@@ -94,16 +94,11 @@ input EmpresaInput{
     imagen:String!
     productos:[ProductoInput]
 }
-input RutaInput{
-    nombre:String!
-    subrutas:[SubRutaInput]
-}
 input SubRutaInput{
-    id:ID
-    nombre:String!
+    nombresubruta:String!
     path:String!
-    icon:String!
-    url:String!
+    icono:String!
+    ubicacion:String!
     condicion:Int
 }
 input ActualizarEmpresaInput{
@@ -136,7 +131,6 @@ type Mutation{
     crearProducto(input:ProductoInput): String
     actualizarProducto(input:ProductoInput): String
     eliminarProducto(input:EliminarProductoInput):String
-    crearRuta(input:RutaInput):String
     crearSubRuta(input:SubRutaInput):String
     
     actualizarMenuItemEmpresa(input:SubRutaInput):String
